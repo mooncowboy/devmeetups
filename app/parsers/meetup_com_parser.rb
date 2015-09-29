@@ -36,19 +36,5 @@ class MeetupComParser
 			meetup.source_site = 1
 			meetup.save
 		end
-
-
-
-		# RMeetup::Client.api_key = "411040253810693d6768327eb266b60"
-		# groups = RMeetup::Client.fetch(:groups, :params)
-		# groups.each do |key, group_data|
-		# 	meetup = Meetup.new
-		# 	debugger
-		# 	# meetup.name = group_data["name"].to_s
-		# 	# meetup.link = group_data["link"].to_s
-		# 	# meetup.description = group_data["description"]
-		# 	# meetup.save!
-		# end
-		# puts groups
 	end
 end
