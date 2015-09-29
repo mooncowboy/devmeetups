@@ -8,19 +8,68 @@
 </div>
 <!-- /.row -->
 <hr>
-<!-- Projects Row -->
 
+<%= render "navbar" %>
+
+<!-- <div>
+    <ul class="list-group">
+        <% @meetups.each do |meetup| %>
+            <li class="list-group-item"><%= meetup.name %>
+                <span class="badge">php</span>
+                <span class="badge">node.js</span>
+            </li>
+        <% end %>
+        
+    </ul>
+</div> -->
+
+<!-- Projects Row -->
 <div class="row">
-	<% @meetups.each do |meetup| %>
-		<div class="col-md-4 portfolio-item">
-        <a href="#">
-            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-        </a>
-        <h3>
-                    <a href="#"><%= meetup.name %></a>
+    <% @meetups.each do |meetup| %>
+        <div class="col-md-4 portfolio-item">
+            <a href="<%= meetup.link %>" target="blank">
+                <div style="width: 360px; height: 205px; overflow: hidden;">
+                    <!-- <img class="img-responsive" src="http://placehold.it/700x400">     -->
+                    <img style="width: 100%" src="<%= meetup.external_image %>">
+                </div>
+                
+                
+            </a>
+            <h3>
+                    <a href="<%= meetup.link %>" target="blank"><%= meetup.name %></a>
                 </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <p><%= meetup.description ? strip_tags(meetup.description).truncate(200) : '' %></p>
+        </div>
+        <% end %>
+</div>
+<!-- /.row -->
+
+<!-- Pagination -->
+<div class="row text-center">
+    <div class="col-lg-12">
+        <ul class="pagination">
+            <li>
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
     </div>
-	<% end %>
 </div>
 <!-- /.row -->

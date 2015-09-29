@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830235531) do
+ActiveRecord::Schema.define(version: 20150901234216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,14 @@ ActiveRecord::Schema.define(version: 20150830235531) do
     t.string   "link"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "external_id"
+    t.string   "external_image"
+    t.integer  "source_site"
+    t.boolean  "disabled",       default: false
   end
+
+  add_index "meetups", ["source_site", "external_id"], name: "index_meetups_on_source_site_and_external_id", unique: true, using: :btree
 
 end
