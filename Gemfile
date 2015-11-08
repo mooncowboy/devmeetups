@@ -28,6 +28,9 @@ gem 'devise'
 
 gem 'rest-client'
 
+gem "paperclip", "~> 4.3"
+gem 'acts-as-taggable-on', '~> 3.4'
+
 gem 'config'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 

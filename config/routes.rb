@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'cities/show'
+
+  get 'cities/index'
+
+  get 'home/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'meetups#index'
 
   resources :meetups
+  resources :cities
+
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

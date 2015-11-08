@@ -1,0 +1,45 @@
+<h1>Highlights</h1>
+<div class="row">
+  <% @meetups.each do |meetup| %>
+    <div class="col-md-4 portfolio-item">
+      <a href="#">
+        <div style="width: 360px; height: 205px; overflow: hidden;">
+          <img style="width: 100%" src="<%= meetup.external_image %>">
+        </div>
+      </a>
+      <h3>
+        <%= link_to meetup.name, meetup %>
+      </h3>
+    </div>
+  <% end %>
+</div>
+
+
+<h1>Cities</h1>
+<div class="row">
+  <% @cities.each do |city| %>
+    <div class="col-md-3 portfolio-item">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+      <h3>
+        <%= link_to city.name, city %>
+      </h3>
+      <p><%= city.description %></p>
+    </div>
+  <% end %>
+</div>
+
+<h1>Techs</h1>
+<div class="row">
+  <% @tags.each do |tag| %>
+    <div class="col-md-2 portfolio-item">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+      <h3>
+        <%= tag.name %>
+      </h3>
+    </div>
+  <% end %>
+</div>
